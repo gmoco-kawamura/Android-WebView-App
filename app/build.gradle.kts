@@ -46,4 +46,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.github.gmoco-kawamura:SampleAppForSdkTest:0.1.6")
     implementation("com.github.delight-im:Android-AdvancedWebView:v3.2.1")
+    implementation("com.github.ktoshiiio:jitpack:0.1.13")
 }

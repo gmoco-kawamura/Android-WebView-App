@@ -6,8 +6,10 @@ import androidx.activity.ComponentActivity
 import com.example.android_lib_kawamura0.AdvancedWebView
 import com.example.android_lib_kawamura0.AppInfoUtil
 //import im.delight.android.webview.AdvancedWebView
+import WebViewRunner
+import tech.gmo.tmpflutter_webview_android.Callbacks
 
-class MainActivity : AppCompatActivity(), AdvancedWebView.Listener {
+class MainActivity : AppCompatActivity(), AdvancedWebView.Listener, Callbacks {
     private lateinit var mWebView: AdvancedWebView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,9 +18,11 @@ class MainActivity : AppCompatActivity(), AdvancedWebView.Listener {
         val appVersionName = AppInfoUtil.getAppVersionName(this)
         println("App Version: $appVersionName")
 
-        mWebView = findViewById(R.id.webview)
+        mWebView = findViewById(R.id.kawamura)
         mWebView.setListener(this, this)
         mWebView.loadUrl("https://www.google.com/")
+//        WebViewRunner.runWebView("id", this)
+        onTaskFinished()
     }
 
     override fun onResume() {
@@ -49,6 +53,8 @@ class MainActivity : AppCompatActivity(), AdvancedWebView.Listener {
 
     override fun onPageFinished(url: String?) {
         // ページのロード完了時の処理
+        println("onPageFinished!!!!!")
+        onTaskFinished()
     }
 
     override fun onPageError(errorCode: Int, description: String?, failingUrl: String?) {
@@ -62,5 +68,8 @@ class MainActivity : AppCompatActivity(), AdvancedWebView.Listener {
     override fun onExternalPageRequest(url: String?) {
         // 外部ページへのリクエスト時の処理
     }
+
+//    @Override
+//    public void Ca
 }
 
