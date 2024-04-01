@@ -64,7 +64,7 @@ class SmaAdWebViewActivity : AppCompatActivity(), SmaAdWebView.Listener {
     }
 
     override fun onConsoleMessage(message: String?, lineNumber: Int, sourceID: String?) {
-
+        
     }
 }
 
