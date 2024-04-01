@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //中央にボタン配置
         val openWebViewButton: Button = findViewById(R.id.openWebViewButton)
         openWebViewButton.setOnClickListener {
             // SmaAdWebViewActivityを開始
